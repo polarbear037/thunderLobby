@@ -13,7 +13,7 @@ async function creatTL() {
     const iframe = document.createElement('iframe');
     iframe.id = "xl_thunderLobby";
     iframe.src = `${lib.assetURL}extension/雷霆/app.html`;
-    iframe.style.cssText = "width:100vw;height:100vh;position:fixed;top:0;left:0;z-index:99999";
+    iframe.style.cssText = "width:100vw;height:100vh;position:fixed;top:0;left:0;z-index:99";
     document.documentElement.appendChild(iframe);
     const modules = { lib, game, ui, get };
     for (const key in modules) {
