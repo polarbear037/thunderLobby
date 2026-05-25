@@ -4,5 +4,5 @@ const UPDATE = {
     "extension.js",
     "src/precontent.js",
   ],
-  intro: "增加了创建盒子观察者以及懒加载功能"
+  intro: "修复了当无名杀界面设置中界面缩放不为100%时会导致【雷霆】界面大小异常的问题。"
 }
