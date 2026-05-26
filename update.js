@@ -1,4 +1,1 @@
-const UPDATE_INFO = {
-  latestVersion: "1.0.2",
-  versionOrder: ["1.0.2"]
-}
+const UPDATE_INFO={latestVersion:"1.0.3",versionOrder:["1.0.2","1.0.3"]};
