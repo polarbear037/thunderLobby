@@ -1,0 +1,228 @@
+.settingbox {
+    flex-direction: column;
+    padding: 8vh 0 0 5vw;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 3vmin;
+    gap: 6vh;
+    color: #e3d380d4;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    touch-action: none !important;
+    user-select: none !important;
+}
+
+.settingbox::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.sub-align {
+    display: flex;
+    width: 54vw;
+    height: 5vh;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.set-rangebox {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    width: 37vw;
+    gap: 2vh;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.set-range {
+    appearance: none;
+    height: 0.5vh;
+    width: 18vw;
+    background: #c5a034;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    /* 关键 */
+}
+
+/* 谷歌/Edge 必须这样写才能拖动 */
+.set-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 3vh;
+    height: 3vh;
+    background: url('../../image/famous/slideBar.png') center / contain no-repeat;
+    border: 0;
+    cursor: pointer;
+    pointer-events: auto;
+    /* 关键！允许拖动 */
+    position: relative;
+}
+
+/* 火狐兼容（可选） */
+.set-range::-moz-range-thumb {
+    appearance: none;
+    width: 3vh;
+    height: 3vh;
+    background: url('../../image/famous/slideBar.png') center / contain no-repeat;
+    border: 0;
+    cursor: pointer;
+}
+
+.radio-item {
+    margin-top: 10px;
+}
+
+.set-input {
+    padding: 0.5vw;
+    font-size: 2.5vmin;
+    width: 20vw;
+}
+
+/* 隐藏浏览器原生单选框 */
+.custom-radio {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.3vw;
+    height: 1.3vw;
+    position: relative;
+    vertical-align: middle;
+}
+
+/* 未选中状态 → 你的图片 */
+.custom-radio::before {
+    content: "";
+    display: block;
+    width: 1.3vw;
+    /* 你的图片宽度 */
+    height: 1.3vw;
+    /* 你的图片高度 */
+    background-image: url("../../image/famous/select.png");
+    /* 未选中图片 */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* 选中状态 → 你的图片 */
+.custom-radio:checked::before {
+    background-image: url("../../image/famous/selectSel.png");
+    /* 选中图片 */
+}
+
+/* 标签对齐（可选） */
+.radio-label {
+    margin-left: 1vw;
+    vertical-align: middle;
+}
+
+.set-fileBox {
+    display: flex;
+    width: 36vw;
+    gap: 1vw;
+}
+
+.set-clickinput {
+    min-height: 3vh;
+    min-width: 10vw;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.set-textinput {
+    width: 100%;
+    padding: 4px 8px;
+    font-size: inherit;
+    background: #422c02;
+    color: #ecd48c;
+    font-family: 'yuanli';
+}
+
+/* 包装层 */
+.set-drop-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* 下拉框本体 */
+.set-drop {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: 'yuanli';
+    width: 100%;
+    height: 5vh;
+    padding: 0 32px 0 10px;
+    /* 右边必须留空！ */
+    border: 2px solid #666;
+    /* border-radius: 8px; */
+    background: #8B5A2B;
+    color: #f9e39f;
+    font-size: 2.5vmin;
+    /* cursor: pointer; */
+    box-sizing: border-box;
+}
+
+/* 箭头 —— 绝对不会跑出去！ */
+.set-drop-wrap::after {
+    content: '';
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 只垂直居中，不旋转 */
+    background-image: url('../../image/famous/drop.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    /* transition: transform 0.2s ease; */
+}
+
+/* 展开时箭头向上 */
+.set-drop-wrap:has(.set-drop:open)::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.settingbtnbox {
+    position: absolute;
+    width: 36vw;
+    height: 5vh;
+    right: 12vw;
+    bottom: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clearAll {
+    background-image: url(../../image/famous/launcher_btn_1.png);
+    background-size: 100% 100%;
+    width: 10vw;
+    height: 5vh;
+    font-size: min(1.4vw, 2.8vh);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8B5A2B;
+}
+
+.scanAll {
+    background-image: url(../../image/famous/launcher_btn_1.png);
+    background-size: 100% 100%;
+    width: 12vw;
+    height: 5vh;
+    font-size: min(1.4vw, 2.8vh);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8B5A2B;
+}

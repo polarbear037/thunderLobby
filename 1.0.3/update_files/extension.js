@@ -1,0 +1,1 @@
+import{content}from"./src/content.js";import{precontent}from"./src/precontent.js";export const type="extension";class Ext{constructor(){this.name="雷霆",this.editable=!1,this.package={author:"雷",version:"1.0.3"}}async precontent(){return precontent.call(this)}content(){return content.call(this)}}export default Ext;

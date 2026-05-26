@@ -1,0 +1,531 @@
+/* 5. 左侧机翼展开动画关键帧 */
+@keyframes wingUnfoldLeft {
+  0% {
+    /* 初始：向左偏移3vw、透明、缩小一点（可选） */
+    transform: translateX(-3vw);
+    opacity: 0.8;
+  }
+
+  100% {
+    /* 结束：回到原位、完全显示 */
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 右侧机翼动画：向右平移 3vw + 透明度渐变 */
+@keyframes wingUnfoldRight {
+  0% {
+    transform: translateX(3vw);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 5. 左侧机翼展开动画关键帧 */
+@keyframes wingUnfoldLeft2 {
+  0% {
+    /* 初始：向左偏移3vw、透明、缩小一点（可选） */
+    transform: translateX(-6vw);
+    opacity: 0.5;
+  }
+
+  100% {
+    /* 结束：回到原位、完全显示 */
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 右侧机翼动画：向右平移 3vw + 透明度渐变 */
+@keyframes wingUnfoldRight2 {
+  0% {
+    transform: translateX(6vw);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#halltop {
+  top: 0;
+  width: 100%;
+  height: 1%;
+  display: flex;
+}
+
+#playercontainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 27.7vw;
+  height: 13.4vh;
+  background: url("../../image/famous/headTitle.png") no-repeat center/ 100% 100%;
+}
+
+#playerHead {
+  --bg: "";
+  position: relative;
+  top: 1.6vh;
+  left: 3.7vw;
+  width: 4.7vw;
+  height: 10.9vh;
+  background-image: var(--bg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+#playerName {
+  position: relative;
+  display: inline-block;
+  top: -9vh;
+  left: 10.2vw;
+  font-size: 1.53vw;
+  color: #fcead2;
+  letter-spacing: -0.1vw;
+}
+
+.playerNameInput {
+  position: relative;
+  display: inline-block;
+  top: -9vh;
+  left: 10.2vw;
+  font-size: 1.3vw;
+  font-family: "yuanli";
+  letter-spacing: -0.1vw;
+}
+
+#hallleft {
+  width: 1%;
+  height: 100%;
+  left: 0;
+  display: flex;
+}
+
+#hallright {
+  right: 0;
+  width: 1%;
+  height: 100%;
+  display: flex;
+}
+
+.chunxiang {
+  background-image: url("../../image/famous/chunxiang.jpg");
+  background-size: 100% 100%;
+  width: 13vw;
+  height: 11vh;
+  box-shadow: 0 0 10px #777;
+  border: 2px #e6c3a3 solid;
+  position: absolute;
+  right: 3.3vw;
+  top: 14vh;
+  cursor: pointer;
+}
+
+#hallbottom {
+  position: fixed;
+  background: url("../../image/famous/normalBg3.png") no-repeat center/ 100% 100%;
+  width: 100%;
+  height: 11vh;
+  bottom: 0;
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: space-between;
+  /* 左右分开：左侧聊天，右侧其他按钮 */
+  padding: 0vw 4vw;
+  /* 左右内边距，避免贴边 */
+  box-sizing: border-box;
+  /* 内边距不撑大容器 */
+  display: flex;
+}
+
+#money-container {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  width: 80vw;
+  height: 6vh;
+  margin: 2.2vh 3.5vw;
+  justify-content: end;
+  position: absolute;
+  right: 0;
+  gap: 2.5vw;
+}
+
+.money-show {
+  width: 7vw;
+  height: 6vh;
+  margin: 0 2vw 0 0px;
+  background-size: 100% 100%;
+  cursor: pointer;
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+.money-show span {
+  --t: "''";
+  position: relative;
+  width: 6vw;
+  height: 3vh;
+  font-size: 3vh;
+  left: 1vw;
+  bottom: 0;
+  display: block;
+}
+
+.money-show span::before {
+  content: var(--t);
+  color: #fff6cc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  bottom: -2.5vh;
+  left: 0.5vw;
+  position: absolute;
+}
+
+#generalshow {
+  background-image: url("../../image/famous/generalshow.png");
+}
+
+#skinshow {
+  background-image: url("../../image/famous/skinshow.png");
+}
+
+#dynamicshow {
+  background-image: url("../../image/famous/dynamicshow.png");
+}
+
+.upBtn {
+  width: 5.9vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #584211;
+  font-size: 3vh;
+  background: url("../../image/famous/launcher_btn_1.png") no-repeat center/ 100% 100%;
+}
+
+#exit {}
+
+#chat {
+  /* 菱形背景（还原截图样式） */
+  width: 8vh;
+  height: 8vh;
+  background: #8B5A2B;
+  /* 深棕色菱形背景，可替换为图片 */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  /* 菱形裁剪 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'yuanli', sans-serif;
+  /* 用你之前的圆隶字体 */
+  font-size: 3vh;
+  cursor: pointer;
+}
+
+/* 右侧按钮组：统一靠右排列 */
+.right-menu-group {
+  display: flex;
+  align-items: center;
+  gap: 4.2vh;
+  /* 按钮之间的间距，按需调整 */
+}
+
+/* 所有右侧按钮的统一样式（含图标+文字） */
+.right-menu-group>div {
+  display: flex;
+  align-items: center;
+  gap: 1.5vh;
+  /* 图标和文字的间距 */
+  color: #e6c3a3;
+  /* 截图的金色文字 */
+  font-family: 'yuanli', sans-serif;
+  font-size: 3.5vh;
+  cursor: pointer;
+  transition: all 0.2s;
+  /*  hover 动画 */
+}
+
+/* 图标统一样式（覆盖你内联的宽高，统一管理） */
+.right-menu-group img {
+  width: auto;
+  height: 5vh;
+  object-fit: contain;
+  /* 防止图标变形 */
+}
+
+/* 可选：hover 交互效果，还原游戏按钮手感 */
+.right-menu-group>div:hover,
+#chat:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* 按钮之间的小竖线分隔符 */
+.right-menu-group>div+div::before {
+  content: "";
+  width: 2px;
+  /* 竖线粗细 */
+  height: 3.5vh;
+  /* 竖线高度 */
+  background: #6d4b2b;
+  /* 深褐色（和你界面风格一致） */
+  border-radius: 1px;
+  margin-right: 1.2vw;
+  /* 竖线右边距 */
+  opacity: 0.8;
+}
+
+#mainbuttoncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  bottom: 15%;
+  transform: translateX(-50%);
+}
+
+.mainbutton {
+  position: relative;
+  margin: 0 -0.7vw;
+  padding: 0 0 1vh 0;
+  outline: none;
+  cursor: pointer;
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: 4vh;
+}
+
+/* ========== 重点：给内部span单独做上下文字渐变 ========== */
+.mainbutton span {
+  background: linear-gradient(to bottom, #f8d88d, #fffae0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 1px #fff6cc, 0 0 2px #ffe899, 0 0 4px #ffdd77;
+}
+
+/* 左侧两个按钮：以右侧边缘为轴，向左展开 */
+.mainbutton:nth-child(1) {
+  transform-origin: right center;
+  animation: wingUnfoldRight2 0.6s ease-out forwards;
+}
+
+.mainbutton:nth-child(2) {
+  transform-origin: right center;
+  animation: wingUnfoldRight 0.6s ease-out forwards;
+}
+
+/* 右侧两个按钮：以左侧边缘为轴，向右展开 */
+.mainbutton:nth-child(4) {
+  transform-origin: left center;
+  animation: wingUnfoldLeft 0.6s ease-out forwards;
+}
+
+.mainbutton:nth-child(5) {
+  transform-origin: left center;
+  animation: wingUnfoldLeft2 0.6s ease-out forwards;
+}
+
+#mainbutton1 {
+  margin: 0 -2.5vw;
+  z-index: 1;
+  width: 12.2vw;
+  height: 6.2vh;
+  background: url("../../image/famous/mainButton1.png") no-repeat center/ 100% 100%;
+}
+
+#mainbutton2 {
+  z-index: 5;
+  width: 12vw;
+  height: 7vh;
+  padding: 0 0 2vh 0;
+  background: url("../../image/famous/mainButton2.png") no-repeat center/ 100% 100%;
+}
+
+#mainbutton3 {
+  z-index: 5;
+  width: 12vw;
+  height: 7vh;
+  padding: 0 0 2vh 0;
+  background: url("../../image/famous/mainButton3.png") no-repeat center/ 100% 100%;
+}
+
+#mainbutton4 {
+  margin: 0 -2.5vw;
+  z-index: 1;
+  width: 12.2vw;
+  height: 6.2vh;
+  background: url("../../image/famous/mainButton4.png") no-repeat center/ 100% 100%;
+}
+
+#mainbutton5 {
+  z-index: 10;
+  width: 16.4vw;
+  height: 11vh;
+  background: url("../../image/famous/mainButton5.png") no-repeat center/ 100% 100%;
+}
+
+.mainBigSpan {
+  font-size: 4.5vh;
+}
+
+/* #mainbutton1 .mainBigSpan,
+#mainbutton2 .mainBigSpan {
+  margin: 0 0 0 1vw;
+}
+
+#mainbutton3 span:not(.mainBigSpan),
+#mainbutton4 span:not(.mainBigSpan) {
+  margin: 0 1vw 0 0;
+} */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .mainbutton:hover,
+  #playerHead:hover,
+  .hallleftbox div:hover,
+  .hallrightbox div:hover,
+  .chunxiang:hover,
+  .money-show:hover {
+    filter: brightness(1.2);
+  }
+}
+
+.hallleftbox {
+  width: 5vw;
+  height: auto;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 18vh;
+  left: 4vw;
+  gap: 3vh;
+}
+
+.hallrightbox {
+  width: 5vw;
+  height: auto;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 35vh;
+  right: 3vw;
+  gap: 3vh;
+}
+
+.hallleftbox div,
+.hallrightbox div {
+  --bg: url("");
+  --text: "";
+  width: 5vw;
+  background-image: var(--bg);
+  background-size: cover;
+  height: 5vw;
+  display: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.hallleftbox div::before,
+.hallrightbox div::before {
+  width: 100%;
+  height: 100%;
+  content: var(--text);
+  position: absolute;
+  font-size: 1.5vw;
+  color: #fdeedb;
+  bottom: -3.5vw;
+  text-align: center;
+  text-shadow:
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+@keyframes halltop-dis {
+  to {
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes hallleft-dis {
+  to {
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes hallbottom-dis {
+  to {
+    transform: translateY(50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes hallright-dis {
+  to {
+    transform: translateX(50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes mainbuttoncontainer-dis {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.chunxiangBox {
+  display: none;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50;
+}
+
+.chunxiangBox.init {
+  display: block;
+}
+
+.exitchunxiang {
+  opacity: 0.6;
+  border: white 2px solid;
+  border-radius: 2px;
+  width: 4vw;
+  height: 3vh;
+  font-size: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  top: 0.2vh;
+  right: 0.2vw;
+  cursor: pointer;
+}
